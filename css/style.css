@@ -13,8 +13,11 @@
 }
 
 
-
 .main-header {
+	background: linear-gradient(-90deg, #42ebf4, #919191);
+	margin-top: 0;
+	border: none;
+	padding-top: 0;
 	padding-bottom: 20px;
 	padding-right: 50px;
 	text-align: right;
@@ -134,6 +137,14 @@
 	text-transform: capitalize;
 }
 
+.modal-body {
+	margin-top: 20px;
+}
+
+.emp-modal-info {
+	text-transform: capitalize;
+}
+
 
 
 
@@ -149,6 +160,7 @@
 	.grid-container {
 		grid-template-columns: auto auto auto;
 	}
+	
 }
 
 @media only screen and (min-width: 1150px) {
