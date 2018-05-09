@@ -72,7 +72,7 @@ $.ajax({
 
 				// closes the modal
 				$('.close').on('click', function () {
-					$(displayMod).fadeOut(1000);;
+					$(displayMod).fadeOut(1000);
 				});
 
 	});
