@@ -43,7 +43,14 @@ $.ajax({
 		modalHTML += '<h2 class= emp-modal-name>' + employee.name.first + ' ' + employee.name.last + '</h2>';
 		modalHTML += '</div';
 		modalHTML += '<div class="modal-body">';
-		modalHTML += '<p>Employee Info</p>';
+		modalHTML += '<p>' + employee.login.username + '</p>';
+		modalHTML += '<p>' + employee.email + '</p>';
+		modalHTML += '<p>' + employee.cell + '</p>';
+		modalHTML += '<p>' + employee.location.street + '</p>';
+		modalHTML += '<p>' + employee.location.city + '</p>';
+		modalHTML += '<p>' + employee.location.state + '</p>';
+		modalHTML += '<p>' + employee.location.postcode + '</p>';
+		modalHTML += '<p>' + employee.dob + '</p>';
 		modalHTML += '</div></div></div>';
 
 		modalArr.push(employee);
@@ -51,74 +58,38 @@ $.ajax({
 	});
 	$('.grid-container').html(newHTML);
 	
-		// $.each(employees, function(i, employee) {
-		// 	modalHTML += '<div id="modal' + i + '" class="modal">';
-		// 	modalHTML += '<div class="modal-content">';
-		// 	modalHTML += '<div class="modal-header">';
-		// 	modalHTML += '<span class="close">&times;</span>';
-		// 	modalHTML += '<img class="employee-img" src="' + employee.picture.large + '" alt="employee image">';
-		// 	modalHTML += '<h2 class= emp-modal-name>' + employee.name.first + ' ' + employee.name.last + '</h2>';
-		// 	modalHTML += '</div';
-		// 	modalHTML += '<div class="modal-body">';
-		// 	modalHTML += '<p>Employee Info</p>';
-		// 	modalHTML += '</div></div></div>';
-			
-		// });
+		
 		$('.modal-container').html(modalHTML);
 		//$('.modal').hide();
 		$('.container').on('click', function (event) {
 				console.log(event.currentTarget.id);
 				let newId = 'modal' + event.currentTarget.id;
-				let displayModal = $('#' + newId);
+				//let displayModal = $('#' + newId);
 				let displayMod = document.querySelector('#' + newId);
 				//displayModal.style.display = 'block';
-				console.log(displayModal);
+				//console.log(displayModal);
 				console.log(displayMod);
 				//$('.modal-container').style.display = "block";
 				//displayModal.style.display = 'block'; 
 				console.log(newId);
-				displayMod.style.display = "block";
+				//displayMod.style.display = "block";
+				// $('.close').attr('id', newId);
+
+				$(displayMod).fadeIn(1000);
+				$('.close').on('click', function () {
+					$(displayMod).fadeOut(1000);;
+				});
 
 	});
 		
 	
-
-	// $('.container').on('click', function() {
-
-	// 	let modal = $(this).data('id');
-	// 	console.log(modal);
-	// });
-
-	// modalChild = $('.modal-container').children('div');
-	// $('.container').click(function(e) {
-	// 	let target = e.currentTarget.id;
-	// 	let targetID = "modal" + target;
-
-
-	// 	console.log(targetID);
-		// for (let i = 0; i < modalArr; i++) {
-		// 	console.log(i);
-		// }
-	// 	for (let i = 0; i < modalChildren.length; i++) {
-	// 		if (target === modalChildren[i].id) {
-	// 			modalChildren[i].style.display = 'block';
-	// 			console.log();
-	// 		}
-	// 	}
-	 // });
-
-	// $('.container').click(function (e) {
-	// 	for (let i = 0; i < employeeArr.length; i++) {
-	// 		let modalID = 'modal' + $(this).id;
-	// 		console.log(modalID);
-	// 		break;
-			
-	// 	}
-		
-	// });
   }
 });
 
+
+// $('.close').on('click', function(event) {
+// 	let event.currentTarget.id;
+// });
 
 // ------ Modal Variables ------- //
 
