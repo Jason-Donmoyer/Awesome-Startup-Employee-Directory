@@ -56,6 +56,9 @@ $.ajax({
 		modalArr.push(employee);
 
 	});
+
+	// Populate container with newHTML
+	
 	$('.grid-container').html(newHTML);
 	
 	$('.modal-container').html(modalHTML);
